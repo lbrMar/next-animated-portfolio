@@ -73,9 +73,9 @@ const NavBar = () => {
           className="w-10 h-8 flex flex-col justify-between z-50 relative"
           onClick={onMenuClick}
         >
-          <div className="w-10 h-1 bg-black rounded"></div>
-          <div className="w-10 h-1 bg-black rounded"></div>
-          <div className="w-10 h-1 bg-black rounded"></div>
+          <div className={`w-10 h-1  rounded ${open ? 'bg-white' : 'bg-black'}`}></div>
+          <div className={`w-10 h-1  rounded ${open ? 'bg-white' : 'bg-black'}`}></div>
+          <div className={`w-10 h-1  rounded ${open ? 'bg-white' : 'bg-black'}`}></div>
         </button>
         {/* MENU LIST */}
         {open && (
