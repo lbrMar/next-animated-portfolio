@@ -168,8 +168,8 @@ const NavBar = () => {
                 variants={listItemVariants}
               >
                 <Link 
-                  onClick={onMenuClick}
                   href={link.url} 
+                  onClick={onMenuClick}
                 >
                   {link.title}
                 </Link>
