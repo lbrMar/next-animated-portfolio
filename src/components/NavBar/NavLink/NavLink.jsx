@@ -9,7 +9,7 @@ const NavLink = ({ menuLink }) => {
   return (
     <div>
       <Link
-        className={`rounded p-1 font-semibold ${pathname === menuLink.url ? 'bg-black text-white' : 'text-black'} hover:bg-black hover:text-white`}
+        className={`rounded p-1 font-semibold ${pathname === menuLink.url ? 'bg-black text-white' : 'text-black'}`}
         href={menuLink.url} 
         key={menuLink.key}
       >
