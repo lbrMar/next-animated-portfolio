@@ -82,6 +82,7 @@ const NavBar = () => {
           <div className="absolute top-0 left-0 flex flex-col items-center justify-center gap-8 w-screen h-screen bg-black text-2xl text-white">
             {menuLinks.map((link) => (
               <Link 
+                onClick={onMenuClick}
                 href={link.url} 
                 key={link.key}
               >
