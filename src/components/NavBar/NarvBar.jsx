@@ -155,7 +155,7 @@ const NavBar = () => {
         {/* MENU LIST */}
         {open && (
           <motion.div 
-            className="absolute top-0 left-0 flex flex-col items-center justify-center gap-8 w-screen h-[calc(100vh+64px)] bg-black text-2xl text-white"
+            className="z-40 absolute top-0 left-0 flex flex-col items-center justify-center gap-8 w-screen h-[calc(100vh+128px)] bg-black text-2xl text-white"
             variants={listVariants}
             initial="closed"
             animate={
