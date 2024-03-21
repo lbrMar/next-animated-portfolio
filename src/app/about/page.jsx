@@ -11,7 +11,7 @@ const AboutPage = () => {
       transition={{ duration: 1 }}
     >
       {/* CONTAINER */}
-      <div className="h-screen w-screen flex">
+      <div className="h-full w-screen flex overflow-scroll">
           {/* TEXT CONTAINER */}
         <div className="h-fit w-screen flex flex-col justify-center gap-24 md:gap-32 lg:gap-48 xl:gap-64
           px-4 sm:px-8 md:px-12 lg:px-20 xl:px48">
@@ -153,16 +153,22 @@ const AboutPage = () => {
                     Front-End Web Developer, implemented and maintained web applications. UX/UI design.
                   </div>
                   {/* DATE */}
-                  <div className="text-xs">
+                  <div className="text-xs text-red-500">
                     2024
                   </div>
                   {/* COMPANY NAME */}
-                  <div className="text-xs">
+                  <div className="text-xs bg-white rounded w-fit font-semibold p-0.5">
                     Company Name
                   </div>
                 </div>
                 {/* CENTER */}
-                <div className="border-2 border-black h-full w-1/5 justify-self-stretch"></div>
+                <div className="w-1/5 flex justify-center">
+                  {/* LINE */}
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                    {/* LINE CIRCLE */}
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                  </div>
+                </div>
                 {/* RIGHT */}
                 <div className="w-2/5"></div>
               </div>
@@ -171,11 +177,17 @@ const AboutPage = () => {
                 {/* LEFT */}
                 <div className="w-2/5"></div>
                 {/* CENTER */}
-                <div className="border-2 border-black h-full w-1/5"></div>
+                <div className="w-1/5 flex justify-center">
+                  {/* LINE */}
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                    {/* LINE CIRCLE */}
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                  </div>
+                </div>
                 {/* RIGHT */}
                 <div className="flex flex-col justify-center gap-4 w-2/5">
                   {/* TITLE */}
-                  <div className="font-bold text-sm">
+                  <div className="font-semibold text-sm bg-white p-3 rounded-b-lg rounded-r-lg">
                     Web Developer
                   </div>
                   {/* DESC */}
@@ -183,11 +195,11 @@ const AboutPage = () => {
                     Front-End Web Developer, implemented and maintained web applications. UX/UI design.
                   </div>
                   {/* DATE */}
-                  <div className="text-xs">
+                  <div className="text-xs text-red-500">
                     2024
                   </div>
                   {/* COMPANY NAME */}
-                  <div className="text-xs">
+                  <div className="text-xs bg-white rounded w-fit font-semibold p-0.5">
                     Company Name
                   </div>
                 </div>
@@ -197,7 +209,7 @@ const AboutPage = () => {
                 {/* LEFT */}
                 <div className="flex flex-col justify-center gap-4 w-2/5">
                   {/* TITLE */}
-                  <div className="font-bold text-sm">
+                  <div className="font-bold text-sm bg-white p-3 rounded-b-lg rounded-s-lg">
                     Web Developer
                   </div>
                   {/* DESC */}
@@ -205,16 +217,22 @@ const AboutPage = () => {
                     Front-End Web Developer, implemented and maintained web applications. UX/UI design.
                   </div>
                   {/* DATE */}
-                  <div className="text-xs">
+                  <div className="text-xs text-red-500">
                     2024
                   </div>
                   {/* COMPANY NAME */}
-                  <div className="text-xs">
+                  <div className="text-xs bg-white rounded w-fit font-semibold p-0.5">
                     Company Name
                   </div>
                 </div>
                 {/* CENTER */}
-                <div className="border-2 border-black h-full w-1/5"></div>
+                <div className="w-1/5 flex justify-center">
+                  {/* LINE */}
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                    {/* LINE CIRCLE */}
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                  </div>
+                </div>
                 {/* RIGHT */}
                 <div className="w-2/5"></div>
               </div>
