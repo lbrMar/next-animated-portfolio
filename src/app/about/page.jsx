@@ -1,8 +1,15 @@
 "use client"
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+
+import { motion, useScroll } from "framer-motion";
+import BrainSvg from "@/components/BrainSvg/BrainSvg";
 
 const AboutPage = () => {
+
+  const scrollContainerRef = useRef(null);
+  const {scrollYProgress} = useScroll({container: scrollContainerRef});
+
   return (
     <motion.div
       className="h-full w-screen"
@@ -11,10 +18,12 @@ const AboutPage = () => {
       transition={{ duration: 1 }}
     >
       {/* CONTAINER */}
-      <div className="h-full w-screen flex overflow-scroll">
+      <div 
+        className="h-full w-screen flex overflow-y-scroll"
+      >
           {/* TEXT CONTAINER */}
         <div className="h-fit w-screen flex flex-col justify-center gap-24 md:gap-32 lg:gap-48 xl:gap-64
-          px-4 sm:px-8 md:px-12 lg:px-20 xl:px48">
+          px-4 sm:px-8 md:px-12 lg:px-20 xl:px48 sm:w-2/3 lg:w-1/2">
           {/* BIGOGRAPHY CONTAINER */}
           <div className="flex flex-col gap-12 justify-center h-full pt-6">
             {/* BIO TITLE */}
@@ -240,8 +249,10 @@ const AboutPage = () => {
           </div>
         </div>
         {/* SVG CONTAINER */}
-        <div className="hidden">
-          IMAGE
+        <div 
+          className="h-screen w-1/3 lg:w-1/2 sm:block sticky top-0 z-30"
+        >
+          <BrainSvg scrollYProgress={scrollYProgress} />
         </div>
       </div>
     </motion.div>
