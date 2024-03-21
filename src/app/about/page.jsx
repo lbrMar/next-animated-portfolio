@@ -1,14 +1,18 @@
 "use client"
 
-import { useRef } from "react";
-
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useInView } from "framer-motion";
 import BrainSvg from "@/components/BrainSvg/BrainSvg";
+import { useRef } from "react";
 
 const AboutPage = () => {
 
-  const scrollContainerRef = useRef(null);
-  const {scrollYProgress} = useScroll({container: scrollContainerRef});
+  const {scrollYProgress} = useScroll({});
+
+  const skillRef = useRef()
+  const isSkillRefVisible = useInView(skillRef) 
+
+  const experienceRef = useRef()
+  const isExperienceRefVisible = useInView(experienceRef)
 
   return (
     <motion.div
@@ -82,13 +86,27 @@ const AboutPage = () => {
             </motion.svg>
           </div>
           {/* SKILLS CONTAINER */}
-          <div className="flex flex-col gap-12 justify-center h-full pt-6">
+          <div 
+            ref={skillRef}
+            className="flex flex-col gap-12 justify-center h-full pt-6"
+          >
             {/* SKILLS TITLE */}
-            <h2 className="font-bold text-2xl">
+            <motion.h2 
+              className="font-bold text-2xl"
+              initial={{x: "-300px"}}
+              animate={isSkillRefVisible ? {x: 0} : {x: "-300px"}}
+            >
               Skills
-            </h2>
+            </motion.h2>
             {/* SKILL LIST */}
-            <div className="flex flex-wrap gap-4">
+            <motion.div 
+              className="flex flex-wrap gap-4"
+              initial={{x: "-900px"}}
+              animate={isSkillRefVisible ? {x: 0} : {x: "-900px"}}
+              transition={{ 
+                delay: 0.1,
+              }}
+            >
               <div className="rounded p-2 text-sm cursor-pointer bg-black font-bold text-white hover:bg-white hover:text-black">
                 JAVASCRIPT
               </div>
@@ -116,7 +134,7 @@ const AboutPage = () => {
               <div className="rounded p-2 text-sm cursor-pointer bg-black font-bold text-white hover:bg-white hover:text-black">
                 SQL
               </div>
-            </div>
+            </motion.div>
             {/* SCROLL SVG */}
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}
@@ -142,15 +160,29 @@ const AboutPage = () => {
             </motion.svg>
           </div>
           {/* EXPERIENCE CONTAINER */}
-          <div className="flex flex-col gap-12 justify-center h-full pt-6 pb-48">
+          <div 
+            ref={experienceRef}
+            className="flex flex-col gap-12 justify-center h-full pt-6 pb-48"
+          >
             {/* EXP TITLE */}
-            <h2 className="font-bold text-2xl">
+            <motion.h2 
+              className="font-bold text-2xl"
+              initial={{x: "-300px"}}
+              animate={isExperienceRefVisible ? {x: 0} : {x: "-300px"}}
+            >
               Experience
-            </h2>
+            </motion.h2>
             {/* EXP LIST */}
             <div className="">
               {/* EXP LIST ITEM */}
-              <div className="flex justify-between gap-2">
+              <motion.div 
+                className="flex justify-between gap-2"
+                initial={{x: "-900px"}}
+                animate={isExperienceRefVisible ? {x: 0} : {x: "-900px"}}
+                transition={{ 
+                  delay: 0.1,
+                }}
+              >
                 {/* LEFT */}
                 <div className="flex flex-col justify-center gap-4 w-2/5">
                   {/* TITLE */}
@@ -180,9 +212,16 @@ const AboutPage = () => {
                 </div>
                 {/* RIGHT */}
                 <div className="w-2/5"></div>
-              </div>
+              </motion.div>
               {/* EXP LIST ITEM */}
-              <div className="flex gap-2">
+              <motion.div 
+                className="flex gap-2"
+                initial={{x: "900px"}}
+                animate={isExperienceRefVisible ? {x: 0} : {x: "900px"}}
+                transition={{ 
+                  delay: 0.2,
+                }}
+              >
                 {/* LEFT */}
                 <div className="w-2/5"></div>
                 {/* CENTER */}
@@ -212,9 +251,16 @@ const AboutPage = () => {
                     Company Name
                   </div>
                 </div>
-              </div>
+              </motion.div>
               {/* EXP LIST ITEM */}
-              <div className="flex gap-2">
+              <motion.div 
+                className="flex gap-2"
+                initial={{x: "-900px"}}
+                animate={isExperienceRefVisible ? {x: 0} : {x: "-900px"}}
+                transition={{ 
+                  delay: 0.3,
+                }}
+              >
                 {/* LEFT */}
                 <div className="flex flex-col justify-center gap-4 w-2/5">
                   {/* TITLE */}
@@ -244,13 +290,13 @@ const AboutPage = () => {
                 </div>
                 {/* RIGHT */}
                 <div className="w-2/5"></div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
         {/* SVG CONTAINER */}
         <div 
-          className="h-screen w-1/3 lg:w-1/2 sm:block sticky top-0 z-30"
+          className="hidden h-screen w-1/3 lg:w-1/2 sm:block sticky top-0 z-30"
         >
           <BrainSvg scrollYProgress={scrollYProgress} />
         </div>
