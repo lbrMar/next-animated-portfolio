@@ -23,7 +23,7 @@ const AboutPage = () => {
     >
       {/* CONTAINER */}
       <div 
-        className="h-full w-screen flex overflow-y-scroll"
+        className="h-[100%] w-screen flex overflow-y-scroll"
       >
           {/* TEXT CONTAINER */}
         <div className="h-fit w-screen flex flex-col justify-center gap-24 md:gap-32 lg:gap-48 xl:gap-64
@@ -103,9 +103,9 @@ const AboutPage = () => {
               className="flex flex-wrap gap-4"
               initial={{x: "-900px"}}
               animate={isSkillRefVisible ? {x: 0} : {x: "-900px"}}
-              transition={{ 
-                delay: 0.1,
-              }}
+              // transition={{ 
+              //   delay: 0.1,
+              // }}
             >
               <div className="rounded p-2 text-sm cursor-pointer bg-black font-bold text-white hover:bg-white hover:text-black">
                 JAVASCRIPT
@@ -218,9 +218,9 @@ const AboutPage = () => {
                 className="flex gap-2"
                 initial={{x: "900px"}}
                 animate={isExperienceRefVisible ? {x: 0} : {x: "900px"}}
-                transition={{ 
-                  delay: 0.2,
-                }}
+                // transition={{ 
+                //   delay: 0.2,
+                // }}
               >
                 {/* LEFT */}
                 <div className="w-2/5"></div>
@@ -257,9 +257,9 @@ const AboutPage = () => {
                 className="flex gap-2"
                 initial={{x: "-900px"}}
                 animate={isExperienceRefVisible ? {x: 0} : {x: "-900px"}}
-                transition={{ 
-                  delay: 0.3,
-                }}
+                // transition={{ 
+                //   delay: 0.3,
+                // }}
               >
                 {/* LEFT */}
                 <div className="flex flex-col justify-center gap-4 w-2/5">

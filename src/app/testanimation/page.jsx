@@ -16,17 +16,25 @@ const TestPage = () => {
     }
   }
 
-  return (
-    <div className="flex flex-col items-center justify-center w-screen h-[calc(100vh-64px)]">
-      <motion.div 
-        className="w-96 h-96 bg-red-400"
-        initial={{ x: -100 }}
-        animate={variants.variant2}
-        transition={{ duration: 1.5 }}
-      >
-      </motion.div>
+return (
+  <div className="h-screen overflow-y-auto">
+    {/* Adjusting the parent container height to h-screen for simplicity */}
+    {/* Content to fill the height */}
+    <div className="h-[calc(100vh-20px)] bg-gray-200">
+      {/* Adjusting the height calculation to account for the sticky header's height */}
+      Scrollable Content
     </div>
-  )
+    <div className="h-20 sticky top-0 bg-white z-10">
+      {/* Adding z-10 to ensure the sticky header stays above other content */}
+      Test
+    </div>
+    <div className="h-[calc(100vh-20px)] bg-gray-200">
+      {/* Adjusting the height calculation to account for the sticky header's height */}
+      Scrollable Content
+    </div>
+
+  </div>
+);
 }
 
 export default TestPage

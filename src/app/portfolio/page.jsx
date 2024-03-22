@@ -56,7 +56,7 @@ const PortfolioPage = () => {
      >
       <div 
         ref={ref}
-        className="h-[600vh] relative"
+        className="h-fit relative overflow-y-auto"
       >
         <div className="h-[calc(100vh-6rem)] w-screen flex items-center justify-center">
           <h1 className="text-7xl md:text-8xl font-semibold text-center">MY WORKS</h1>
